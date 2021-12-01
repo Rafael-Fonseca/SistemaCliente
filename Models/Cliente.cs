@@ -1,4 +1,4 @@
-namespace Clientes.Models
+namespace SistemaCliente.Models
 {
     public class Cliente
     {

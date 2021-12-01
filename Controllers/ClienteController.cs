@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Clientes.Models;
+using SistemaCliente.Models;
 
 namespace SistemaCliente.Controllers
 {
@@ -13,9 +13,9 @@ namespace SistemaCliente.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        private readonly ClientContext _context;
+        private readonly ClienteContext _context;
 
-        public ClienteController(ClientContext context)
+        public ClienteController(ClienteContext context)
         {
             _context = context;
         }
@@ -24,14 +24,14 @@ namespace SistemaCliente.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Cliente>>> GetCliente()
         {
-            return await _context.Cliente.ToListAsync();
+            return await _context.Clientes.ToListAsync();
         }
 
         // GET: api/Cliente/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Cliente>> GetCliente(long id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
+            var cliente = await _context.Clientes.FindAsync(id);
 
             if (cliente == null)
             {
@@ -77,7 +77,7 @@ namespace SistemaCliente.Controllers
         [HttpPost]
         public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
-            _context.Cliente.Add(cliente);
+            _context.Clientes.Add(cliente);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(nameof(GetCliente), new { id = cliente.Id }, cliente);
@@ -87,13 +87,13 @@ namespace SistemaCliente.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCliente(long id)
         {
-            var cliente = await _context.Cliente.FindAsync(id);
+            var cliente = await _context.Clientes.FindAsync(id);
             if (cliente == null)
             {
                 return NotFound();
             }
 
-            _context.Cliente.Remove(cliente);
+            _context.Clientes.Remove(cliente);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -101,7 +101,7 @@ namespace SistemaCliente.Controllers
 
         private bool ClienteExists(long id)
         {
-            return _context.Cliente.Any(e => e.Id == id);
+            return _context.Clientes.Any(e => e.Id == id);
         }
     }
 }

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Clientes.Models
+namespace SistemaCliente.Models
 {
     public class ClienteContext : DbContext
     {
@@ -9,6 +9,6 @@ namespace Clientes.Models
         {
         }
 
-        public DbSet<Cliente> TodoItems { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
     }
 }

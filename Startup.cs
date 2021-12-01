@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Clientes.Models;
 using Microsoft.OpenApi.Models;
+using Microsoft.EntityFrameworkCore;
+using SistemaCliente.Models;
+using Pomelo.EntityFrameworkCore.MySql;
 
 namespace SistemaCliente
 {
@@ -23,15 +24,14 @@ namespace SistemaCliente
         {
 
             services.AddControllers();
-            services.AddDbContext<ClienteContext>(opt =>
-                                               opt.UseInMemoryDatabase("Cliente"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Clientes", Version = "v1" });
             });
 
-            services.AddDbContext<ClientContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("ClientContext")));
+            string connectionString = Configuration.GetConnectionString("Default");
+            services.AddDbContext<ClienteContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+            services.AddDatabaseDeveloperPageExceptionFilter();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
