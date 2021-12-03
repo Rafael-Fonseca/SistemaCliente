@@ -1,0 +1,53 @@
+================ ARITMÉTICOS ======================
+simbolo     descrição       precedencia
+()          parenteses      máxima
+*           mult            média
+/           div             média
+%           RESTO               ?
++           soma            mínima
+-           sub             mínima
+
+============= INCREMENTO E DECREMENTO ==============
+INCREMENTO ++
+DECREMENTO --
+Podem vir antes ou depois da variável, se vier ANTES
+ele incrementa antes, e então passa o resultado para
+a linha de código.
+DEPOIS: Executa a lógica e depois incrementa. 
+
+================ CONCATENAÇÃO ======================
++ com pelo menos uma variável do tipo strings
+
+================  ATRIBUIÇÃO  ======================
+Sintaxe: 
+    variável simbolo variável   Resultado           Funciona com Strings
+        A         =     B           A = B                   S
+        A        +=     B           A = A + B               S
+        A        -=     B           A = A - B
+        A        *=     B           A = A * B
+        A        /=     B           A = A / B
+        A        %=     B           A = A % B
+
+================   IGUALDADE  ======================
+==  IGUALDADE
+!=  DIFERENTE
+Retornam booleanos.
+
+================  RELACIONAIS  ======================
+>
+>=
+<
+<=
+Retornam booleanos.
+
+================    LÓGICOS    ======================
+Os simbolos estão dispostos da maior para a menor precedencia
+
+simbolo     nome        descrição
+!           negação     Realiza a negação lógica
+&           and         Avalia o operando da direita mesmo que o da esquerda seja falso
+^           xor         Realiza o ou exclusivo
+|           or          Semelhante a & mas para o OU lógico
+&&          and         Não avalia o operando da direita se o da esquerda for falso
+||          or          Semelhante a && mas para o OU lógico
+

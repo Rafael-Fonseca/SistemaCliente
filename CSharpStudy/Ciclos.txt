@@ -1,0 +1,42 @@
+==================== WHILE  =====================
+Sintaxe:
+    while ( condição )
+    {
+        instruções;
+    }
+
+Obs:
+    * Se a condição nunca se tornar false, vai entrar em loop infinito.
+    * Se a condição nunca for true, nenhuma iteração será realizada.
+
+================== DO WHILE  =====================
+Sintaxe:
+    do
+    {
+        instruções;
+    } while ( condição );
+
+Obs:
+    * Se a condição nunca se tornar false, vai entrar em loop infinito.
+    * Se a condição nunca for true, vai executar uma repetição.
+
+=====================  FOR  ======================
+Sintaxe:
+    for ([Declaração variável de controle] [;] [Condição] [;] [Alteração da variavel de controle])
+    {
+        instruções;
+    }
+
+Obs:
+    * Posso declarar mais de uma variável de controle, desde que tenham o mesmo tipo, separando por
+    vírgulas, ao fazer isso, não necessariamente preciso escrever a alteração de variavel, separando por
+    vírgulas também.
+    * A condição também pode ser composta.
+
+==================== FOREACH  =====================
+Sintaxe:
+    foreach ([tipo ou var] [Id_index] [in] [Id_Coleção])
+    {
+        instruções;
+    }
+

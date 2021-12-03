@@ -1,0 +1,30 @@
+A estrutura básica de um programa em C# é:
+
+Importações
+    Sintaxe: using [Identificador do Namespace];
+    Obs: A biblioteca a ser importada tem que constar nas referências
+
+Declaração do Namespace
+    Sintaxe: namespace [Identificador] {...}
+    Obs: Este Identificador é uma referência de onde o arquivo se encontra no projeto.
+
+Dentro da declaração do namespace
+Declarar as classes que fazem parte do namespace declarado.
+    Sintaxe: [Mod. acesso] class [Identificador] {...}
+    Em caso de herança completar com: [:] [Identificador da classe pai] {...}
+
+Assinatura de métodos
+    Sintaxe: [Mod. acesso] [Mod. opcional] [Tipo retorno] [Identificador] [()] {}
+    
+    * No caso do método receber parametros, colocar dentro do (): [Tipo retorno] [Identificador do parametro]
+    Em caso de mais de um parametro, separar por vírgulas.
+    
+    * Alguns dos modificadores opcionais podem ser:
+        > virtual: Quem herdar PODE sobrescrever
+        > abstract: Quem herdar PRECISA implementar
+        > sealed:
+    
+    * Os modificadores de acesso são:
+        > public: Qualquer parte do código tem acesso.
+        > private: Apenas a classe tem acesso.
+        > protected: Apenas a classe e quem herdar dela possuem acesso.

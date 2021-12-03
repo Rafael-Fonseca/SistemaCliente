@@ -1,0 +1,35 @@
+Declaração de variáveis:
+    Sintaxe:
+    Única:      [Tipo] [Identificador] [;]
+    Múltipla:   [Tipo] [ident 1] [,] [ident 2][,] .... [,] [ident n] [;]
+
+Tipo implícito:
+    * Utilidades:
+        > Quando não sabemos qual tipo de varíavel será recebebido por aquela variável
+        > Invocar construtores sem repetir o Identificador da classe.
+    
+    * Observações:
+        > Tem que ser atribuida no momento da inicialização
+        > Quando inicializada, se torna uma variável fortemente tipada do tipo recebido,
+            ou seja, posso utilizar os métodos e atributos do tipo recebido.
+        
+    Exemplos:
+    Invocação de construtor:
+        Sintaxe: var [ident] = new [ident da classe]()[;]
+    
+Tipo Object (Base para todos os tipos):
+    Pode receber qualquer valor e a qualquer momento,
+    mas o seu tipo, continua sendo object, 
+    ou seja, não pode utilizar os métodos e atributos do tipo recebido.
+    
+    O exemplo de sintaxe mostrado a baixo não geraria erro:
+        object variavel = false;
+        variavel = 200;
+        variavel = "Rafael";
+
+Constantes:
+    Se tentar alterar o valor dela em tempo de execução, vai dar erro.
+    
+    Sintaxe:
+    const [tipo] [ident] [=] [valor] [;]
+

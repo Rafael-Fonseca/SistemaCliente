@@ -1,0 +1,61 @@
+================ IF - ELSE IF - ELSE ==================
+Sintaxe:
+    if(condição)
+    {
+        Intruções;
+    }
+    
+    else if (condição)
+    {
+        instruções;
+    }
+    
+    else
+    {
+        Intruções;
+    }
+
+
+==================== OP  TERNÁRIO =====================
+Sintaxe:
+    condição ? Instrução true : Instrução false
+
+
+==================== SWITCH CASE  =====================
+
+Sintaxe:
+    switch ( Identificador )
+    {
+        case valor:
+            instruções;
+            break;
+        
+        case valor_2:
+            instruções;
+            break;
+
+        default:
+            instruções;
+            break;
+    }
+
+Obs: 
+    * Posso ter tantos cases quanto necessário.
+    * default funciona como um else no if, ou seja, se em nenhum dos cases executa o default
+    * A sintaxe abaixo
+      case valor:
+      case valor2:
+        instruções;
+        break;
+    
+      Funciona como valor OU valor2
+
+
+==================== GOTO  =====================
+Declaração que desvia a execução do código diretamente para algum LABEL
+    Sintaxe:
+        goto [Id_Label] [;]
+        
+    * LABEL: Identificador de alguma linha de código
+        Sintaxe:
+            Id_Label :

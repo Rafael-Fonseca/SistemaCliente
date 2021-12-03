@@ -1,0 +1,21 @@
+================== Vetores ==================
+Estrutura indexada que armazena elementos de
+um mesmo tipo. Indexes começam em ZERO.
+
+Sintaxe:
+    tipo[] Identificador = new tipo[tamanho];
+os tipos da linha acima devem ser iguais
+
+Sintaxe atribuição:
+    Identificador[Index] = Valor;
+
+================== Matrizes ==================
+Vetor bi-dimensional
+
+Sintaxe:
+    tipo[,] Identificador = new tipo[linhas, colunas];
+os tipos da linha acima devem ser iguais
+
+Sintaxe atribuição:
+    Identificador[Index linha, Index coluna] = Valor;
+
