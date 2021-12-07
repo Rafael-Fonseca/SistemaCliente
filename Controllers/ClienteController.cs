@@ -13,7 +13,22 @@ namespace SistemaCliente.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
+        private string[] ValidGenders = new string[]{
+            "Masculino", "Feminino", "Outros"
+        };
         private readonly ClienteContext _context;
+
+        private bool ValidDate(DateTime date){
+            return date.Date <= DateTime.Now.Date;
+        }
+
+        private bool ValidGender(String gender){
+            return ValidGenders.Contains(gender);
+        }
+
+        private bool ValidData(Cliente cliente){
+            return ValidDate(cliente.BirthDate) && ValidGender(cliente.Gender);
+        }
 
         public ClienteController(ClienteContext context)
         {
@@ -46,7 +61,7 @@ namespace SistemaCliente.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCliente(long id, Cliente cliente)
         {
-            if (id != cliente.Id)
+            if (id != cliente.Id || !ValidData(cliente))
             {
                 return BadRequest();
             }
@@ -77,10 +92,15 @@ namespace SistemaCliente.Controllers
         [HttpPost]
         public async Task<ActionResult<Cliente>> PostCliente(Cliente cliente)
         {
-            _context.Clientes.Add(cliente);
-            await _context.SaveChangesAsync();
+            if (ValidData(cliente)){
+                _context.Clientes.Add(cliente);
+                await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetCliente), new { id = cliente.Id }, cliente);
+                return CreatedAtAction(nameof(GetCliente),
+                        new { id = cliente.Id }, cliente);
+            }
+
+            return BadRequest();
         }
 
         // DELETE: api/Cliente/5
