@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SistemaCliente.Models
 {
-    public class Cliente
+    public class ClienteDTO
     {
         public long Id { get; set; }
 
@@ -21,7 +21,5 @@ namespace SistemaCliente.Models
         [Required]
         [ValidGender]
         public string Gender { get; set; }
-
-        public bool Active {get; set;} //SECRET!!!
     }
 }

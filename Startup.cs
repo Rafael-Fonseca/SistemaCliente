@@ -23,11 +23,11 @@ namespace SistemaCliente
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Sistema de Clientes", Version = "v1" });
-            });
+            }).AddSwaggerGenNewtonsoftSupport();
 
             string connectionString = Configuration.GetConnectionString("Default");
             services.AddDbContext<ClienteContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
